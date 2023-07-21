@@ -42,7 +42,7 @@ const defaultExpenses = [
     console.log(expenses);
 
     setExpenses((prevExpenses) => { 
-      return [...prevExpenses, newExpense];
+      return [newExpense, ...prevExpenses ];
     })
   };
 

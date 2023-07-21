@@ -23,13 +23,13 @@ const defaultExpenses = [
   {
     id: "e4",
     title: "New Desk (Wooden)",
-    amount: 450,
+    amount: 250,
     date: new Date(2021, 5, 12),
   },
   {
     id: "e5",
     title: "MacBook Air",
-    amount: 1750,
+    amount: 175,
     date: new Date(2023, 5, 12),
   },
 ];

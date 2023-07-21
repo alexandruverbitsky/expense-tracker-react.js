@@ -2,10 +2,11 @@ import logo from "./logo.svg";
 import "./App.css";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
+import React, {useState} from "react";
 
 
 const App = () => {
-const expenses = [
+const defaultExpenses = [
   {
     id: "e1",
     title: "Toilet Paper",
@@ -25,11 +26,29 @@ const expenses = [
     amount: 450,
     date: new Date(2021, 5, 12),
   },
+  {
+    id: "e5",
+    title: "MacBook Air",
+    amount: 1750,
+    date: new Date(2023, 5, 12),
+  },
 ];
+  
+  const [expenses, setExpenses] = useState(defaultExpenses);
+  
+  const newExpenseHandler = (newExpense) => {
+
+    // expenses.push(newExpense);
+    console.log(expenses);
+
+    setExpenses((prevExpenses) => { 
+      return [...prevExpenses, newExpense];
+    })
+  };
 
   return (
     <div className="App">
-      <NewExpense />
+      <NewExpense onNewExpense={newExpenseHandler} />
       <Expenses expenses={expenses} />
     </div>
   );
